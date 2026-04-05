@@ -1,0 +1,9 @@
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/polyverse"
+  to = "/polyverse/index.html"
+  status = 200
