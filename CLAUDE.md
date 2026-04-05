@@ -72,7 +72,7 @@ sennep-games/
 - [x] netlify.toml configured
 - [x] .gitignore configured
 - [x] Netlify account set up and deploying
-- [ ] Polyverse page — desktop build
+- [x] Polyverse page — desktop build (first draft)
 - [ ] Polyverse page — mobile build
 - [ ] Polyverse page — responsive
 - [ ] Point sennepgames.com domain at Netlify

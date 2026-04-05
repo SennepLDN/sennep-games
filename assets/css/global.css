@@ -1,0 +1,80 @@
+/* ============================================================
+   Sennep Games — Global CSS
+   Design tokens sourced from Figma: Sennep Games website
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&family=Manrope:wght@400;600&display=swap');
+
+/* ============================================================
+   Design tokens
+   ============================================================ */
+:root {
+
+  /* --- Colours --- */
+  --color-bg-hero:    #05090B;  /* hero section — deepest black */
+  --color-bg:         #0B1D28;  /* main page background — dark navy */
+  --color-heading:    #B6D9E1;  /* headings & primary text — pale blue */
+  --color-body:       #EBEBEB;  /* body copy — off-white */
+  --color-cream:      #F2EFE8;  /* light accent (badge text, etc.) */
+  --color-blush:      #E5D1C8;  /* logo & decorative elements */
+  --color-badge-dark: #1D3F53;  /* award badge fill / text */
+  --color-badge-mid:  #2E566E;  /* award badge vector accent */
+  --color-badge-bar:  #406982;  /* award ribbon bar */
+  --color-white:      #FFFFFF;
+
+  /* --- Typography --- */
+  --font-heading: 'Paytone One', sans-serif;
+  --font-body:    'Manrope', sans-serif;
+
+  /* Font sizes */
+  --text-hero:     150px;  /* "Polyverse" hero title */
+  --text-h2:        50px;  /* section headings */
+  --text-subtitle:  22px;  /* tagline under hero title */
+  --text-body:      22px;  /* body copy */
+  --text-badge:     18px;  /* award badge text */
+  --text-label:      9px;  /* small labels e.g. SILVER */
+
+  /* Line heights */
+  --leading-hero:   1;      /* hero title — tight */
+  --leading-h2:     60px;   /* section headings */
+  --leading-body:   40px;   /* body copy & subtitle */
+
+  /* --- Spacing --- */
+  --space-section-y:  60px;   /* section top/bottom padding */
+  --space-margin-x:  120px;   /* outer horizontal margin */
+  --space-col-gap:    60px;   /* gap between image and text columns */
+  --space-text-gap:   22px;   /* gap between heading and body inside a text block */
+
+  /* --- Layout --- */
+  --page-width:   1440px;  /* design canvas width */
+  --col-width:     570px;  /* content column width */
+}
+
+/* ============================================================
+   Base reset
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--color-body);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
