@@ -54,8 +54,9 @@ sennep-games/
 ## Deployment
 - Netlify connected to this GitHub repo
 - Every push to main branch auto-deploys
-- Custom domain: sennepgames.com (DNS to be pointed at Netlify)
-- Netlify account: TBD — not yet set up
+- Temporary live URL: https://rainbow-bavarois-9e5d79.netlify.app
+- Custom domain: sennepgames.com (DNS to be pointed at Netlify — do this after Polyverse page is built)
+- Netlify account: SennepLDN on Netlify, connected to GitHub SennepLDN/sennep-games
 
 ## Session notes
 - Matt is a designer, not a developer — explain reasoning behind decisions
@@ -65,10 +66,23 @@ sennep-games/
 
 ## Current session status
 - [x] GitHub repo created
-- [x] Repo cloned to Mac
+- [x] Repo cloned to Mac (~Documents/sennep-games)
 - [x] Folder structure created
 - [x] CLAUDE.md written
-- [ ] netlify.toml configured
-- [ ] .gitignore configured
-- [ ] Netlify account set up
-- [ ] Polyverse page started
+- [x] netlify.toml configured
+- [x] .gitignore configured
+- [x] Netlify account set up and deploying
+- [ ] Polyverse page — desktop build
+- [ ] Polyverse page — mobile build
+- [ ] Polyverse page — responsive
+- [ ] Point sennepgames.com domain at Netlify
+- [ ] Mailing list integration
+- [ ] Analytics integration
+- [ ] Homepage (sennepgames.com)
+
+## How to start a new session
+1. Open Terminal
+2. Run: cd ~/Documents/sennep-games
+3. Run: claude
+4. Tell Claude: "Please read CLAUDE.md and let's continue building the Polyverse page"
+5. Share your Figma file link when asked
