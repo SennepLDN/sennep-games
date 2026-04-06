@@ -18,7 +18,7 @@
    ============================================================ */
 .section-heading {
     font-family: var(--font-heading);
-    font-size: var(--text-h2);
+    font-size: clamp(29px, 3.47vw, 50px);
     font-weight: 400;
     line-height: var(--leading-h2);
     color: var(--color-heading);
@@ -27,7 +27,7 @@
 
 .section-body {
     font-family: var(--font-body);
-    font-size: var(--text-body);
+    font-size: clamp(13px, 1.53vw, 22px);
     font-weight: 400;
     line-height: var(--leading-body);
     color: var(--color-body);
@@ -40,7 +40,7 @@
 .hero {
     position: relative;
     width: 100%;
-    height: 811px;
+    height: clamp(470px, 56.32vw, 811px);
     background-color: var(--color-bg-hero);
     background-image: url('../images/polyverse/hero.jpg');
     background-size: cover;
@@ -51,28 +51,28 @@
 /* Sennep Games logo — top left */
 .hero__logo {
     position: absolute;
-    top: 40px;
-    left: 40px;
+    top: clamp(24px, 2.78vw, 40px);
+    left: clamp(24px, 2.78vw, 40px);
 }
 
 .hero__logo img {
-    width: 84px;
-    height: 73px;
+    width: clamp(48px, 5.83vw, 84px);
+    height: clamp(42px, 5.07vw, 73px);
 }
 
 /* Award badges — bottom right */
 .hero__achievements {
     position: absolute;
-    bottom: 40px;
-    right: 40px;
+    bottom: clamp(24px, 2.78vw, 40px);
+    right: clamp(24px, 2.78vw, 40px);
     display: flex;
-    gap: 20px;
+    gap: clamp(12px, 1.39vw, 20px);
     align-items: flex-end;
 }
 
 .achievement img {
-    width: 207px;
-    height: 200px;
+    width: clamp(119px, 14.38vw, 207px);
+    height: clamp(115px, 13.89vw, 200px);
     object-fit: contain;
 }
 
@@ -82,19 +82,19 @@
    ============================================================ */
 .title-section {
     background-color: var(--color-bg);
-    padding: 120px 10px;
+    padding: clamp(70px, 8.33vw, 120px) clamp(6px, 0.69vw, 10px);
 }
 
 .title-section__inner {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 45px;
+    gap: clamp(26px, 3.13vw, 45px);
 }
 
 .title-section__heading {
     font-family: var(--font-heading);
-    font-size: var(--text-hero);
+    font-size: clamp(87px, 10.42vw, 150px);
     font-weight: 400;
     line-height: var(--leading-hero);
     color: var(--color-heading);
@@ -104,11 +104,11 @@
 
 .title-section__tagline {
     font-family: var(--font-heading);
-    font-size: var(--text-subtitle);
+    font-size: clamp(13px, 1.53vw, 22px);
     font-weight: 400;
     line-height: var(--leading-body);
     color: var(--color-heading);
-    max-width: 800px;
+    max-width: clamp(463px, 57.08vw, 822px);
     text-align: center;
 }
 
@@ -129,7 +129,7 @@
 .intro__image {
     flex: 0 0 var(--col-width);
     width: var(--col-width);
-    height: 570px;
+    height: var(--col-width);
 }
 
 .intro__image img {
@@ -159,12 +159,12 @@
 .screens__track {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: clamp(17px, 2.08vw, 30px);
 }
 
 .screens__track img {
-    width: 275px;
-    height: 595px;
+    width: clamp(159px, 19.10vw, 275px);
+    height: clamp(344px, 41.32vw, 595px);
     border-radius: 6px;
 }
 
@@ -174,7 +174,7 @@
    ============================================================ */
 .ocean {
     background-color: var(--color-bg);
-    padding: var(--space-section-y) 0 240px;
+    padding: var(--space-section-y) 0 clamp(139px, 16.67vw, 240px);
     display: flex;
     flex-direction: column;
     gap: var(--space-col-gap);
@@ -186,14 +186,14 @@
 
 .ocean__panels {
     display: flex;
-    gap: 30px;
+    gap: clamp(17px, 2.08vw, 30px);
     padding-left: var(--space-margin-x);
 }
 
 .ocean__panel {
-    flex: 0 0 375px;
-    width: 375px;
-    height: 812px;
+    flex: 0 0 clamp(217px, 26.04vw, 375px);
+    width: clamp(217px, 26.04vw, 375px);
+    height: clamp(470px, 56.39vw, 812px);
     border-radius: 20px;
     overflow: hidden;
 }
@@ -203,4 +203,191 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+
+/* ============================================================
+   Wide — min-width: 1441px
+   ============================================================ */
+@media (min-width: 1441px) {
+
+  .hero {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 811px;
+    background-image: url('../images/polyverse/hero_wide_new.jpg');
+    background-size: auto 811px;
+    background-position: center center;
+  }
+
+}
+
+@media (min-width: 2500px) {
+
+  .hero {
+    background-size: cover;
+  }
+
+}
+
+
+/* ============================================================
+   Mobile — max-width: 833px
+   Based on Figma: polyverse_375
+   ============================================================ */
+@media (max-width: 833px) {
+
+  /* --- Hero ---
+     Splits into two blocks: hero image (top 395px) then
+     achievements bar below. Background is constrained to the
+     image area using background-size, and a ::before spacer
+     pushes the achievements down below it.
+  */
+  .hero {
+    height: auto;
+    background-image: url('../images/polyverse/hero_image_sq.jpg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center top;
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+  }
+
+  .hero::before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+    flex-shrink: 0;
+  }
+
+  .hero__logo {
+    top: 26px;
+    left: 26px;
+  }
+
+  .hero__logo img {
+    width: 48px;
+    height: 42px;
+  }
+
+  .hero__achievements {
+    position: static;
+    background-color: var(--color-bg);
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    padding: 30px 26px;
+  }
+
+  .achievement img {
+    width: 154px;
+    height: 148px;
+  }
+
+
+  /* --- Title section --- */
+  .title-section {
+    padding: 30px 26px;
+  }
+
+  .title-section__inner {
+    gap: 30px;
+  }
+
+  .title-section__heading {
+    font-size: 52px;
+  }
+
+  .title-section__tagline {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+
+  /* --- Intro sections ---
+     Both go single-column: image on top, text below.
+     intro--reverse has image second in DOM, so we use
+     order: -1 to pull it back to the top on mobile.
+  */
+  .intro {
+    flex-direction: column;
+    padding: 30px 26px;
+    gap: 30px;
+  }
+
+  .intro--reverse .intro__image {
+    order: -1;
+  }
+
+  .intro__image {
+    flex: none;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .intro__text {
+    flex: none;
+    width: 100%;
+    gap: 14px;
+  }
+
+  .section-heading {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .section-body {
+    font-size: 16px;
+    line-height: 23px;
+  }
+
+
+  /* --- iPhone screens ---
+     6 images arranged as 2 rows of 3 using CSS Grid.
+  */
+  .screens {
+    padding: 30px 0;
+  }
+
+  .screens__track {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .screens__track img {
+    width: 100px;
+    height: 217px;
+  }
+
+
+  /* --- Ocean scene --- */
+  .ocean {
+    padding: 30px 26px 30px;
+    gap: 30px;
+  }
+
+  .ocean__heading {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .ocean__panels {
+    padding-left: 0;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .ocean__panel {
+    flex: 0 0 102px;
+    width: 102px;
+    height: 221px;
+    border-radius: 10px;
+  }
+
 }

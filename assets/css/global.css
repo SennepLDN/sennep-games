@@ -35,19 +35,26 @@
   --text-label:      9px;  /* small labels e.g. SILVER */
 
   /* Line heights */
-  --leading-hero:   1;      /* hero title — tight */
-  --leading-h2:     60px;   /* section headings */
-  --leading-body:   40px;   /* body copy & subtitle */
+  --leading-hero:   1;                          /* hero title — tight, no scaling needed */
+  --leading-h2:     clamp(35px, 4.17vw, 60px); /* section headings */
+  --leading-body:   clamp(23px, 2.78vw, 40px); /* body copy & subtitle */
 
   /* --- Spacing --- */
-  --space-section-y:  60px;   /* section top/bottom padding */
-  --space-margin-x:  120px;   /* outer horizontal margin */
-  --space-col-gap:    60px;   /* gap between image and text columns */
-  --space-text-gap:   22px;   /* gap between heading and body inside a text block */
+  --space-section-y:  clamp(35px,  4.17vw, 60px);  /* section top/bottom padding */
+  --space-margin-x:   clamp(70px,  8.33vw, 120px); /* outer horizontal margin */
+  --space-col-gap:    clamp(35px,  4.17vw, 60px);  /* gap between image and text columns */
+  --space-text-gap:   clamp(13px,  1.53vw, 22px);  /* gap between heading and body */
 
   /* --- Layout --- */
-  --page-width:   1440px;  /* design canvas width */
-  --col-width:     570px;  /* content column width */
+  --page-width:   1440px;                        /* design canvas width */
+  --col-width:    clamp(330px, 39.58vw, 570px); /* content column width */
+
+  /* --- Breakpoints (reference only — use literal values in @media queries) ---
+     Mobile:   375px   @media (min-width: 375px)
+     Tablet:   834px   @media (min-width: 834px)
+     Desktop: 1440px   @media (min-width: 1440px)  ← built
+     Wide:    2500px   @media (min-width: 2500px)
+  --- */
 }
 
 /* ============================================================

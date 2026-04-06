@@ -40,8 +40,7 @@ sennep-games/
 ### /polyverse (sennepgames.com/polyverse)
 - Status: IN PROGRESS
 - Figma sections (in order): Hero unit, Intro, Intro_2, iphone_screens, ocean_scene
-- Desktop build first, then mobile, then responsive
-- Priority: live before London Games Festival event (approx 2 weeks)
+- Next session: subtle animation and scroll behaviour
 
 ### / (homepage)
 - Status: NOT STARTED — build after Polyverse page is complete
@@ -72,13 +71,29 @@ sennep-games/
 - [x] netlify.toml configured
 - [x] .gitignore configured
 - [x] Netlify account set up and deploying
-- [x] Polyverse page — desktop build (second draft — ocean scene videos added, further amends to do)
-- [ ] Polyverse page — mobile build
-- [ ] Polyverse page — responsive
+- [x] Polyverse page — desktop build
+- [x] Polyverse page — ocean scene videos (autoplay, loop, muted)
+- [x] Polyverse page — mobile layout (375px) — single column, square hero image, 2×3 phone grid
+- [x] Polyverse page — fluid responsive scaling (834px–1440px) using CSS clamp()
+- [x] Polyverse page — wide breakpoint (1441px+) — full-viewport hero with hero_wide_new.jpg
+- [x] Polyverse page — 2500px+ hero scales with browser via background-size: cover
+- [ ] Polyverse page — animation and scroll behaviour (next session)
 - [ ] Point sennepgames.com domain at Netlify
 - [ ] Mailing list integration
 - [ ] Analytics integration
 - [ ] Homepage (sennepgames.com)
+
+## Responsive breakpoints
+- Mobile:   max-width 833px  — single column, square hero image swapped in (hero_image_sq.jpg)
+- Tablet:   834px–1439px     — two column, fluid scaling via clamp() from Figma 834 & 1024 designs
+- Desktop:  1440px           — base design, all fixed values
+- Wide:     1441px–2499px    — hero breaks out of page wrapper, full-viewport width (hero_wide_new.jpg, auto 811px)
+- X-Wide:   2500px+          — hero background-size: cover, scales with browser
+
+## CSS architecture
+- global.css: design tokens (colours, fonts, spacing variables using clamp() for fluid scaling)
+- polyverse.css: page layout, desktop-first with mobile @media (max-width: 833px) at bottom
+- Breakpoint reference comments in global.css :root block
 
 ## How to start a new session
 1. Open Terminal
