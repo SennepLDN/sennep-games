@@ -198,7 +198,8 @@
     overflow: hidden;
 }
 
-.ocean__panel img {
+.ocean__panel img,
+.ocean__panel video {
     width: 100%;
     height: 100%;
     object-fit: cover;
