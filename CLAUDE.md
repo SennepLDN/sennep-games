@@ -16,7 +16,7 @@ Sennep is an independent design/games studio based in London. Shipped titles inc
 sennep-games/
 ├── CLAUDE.md               ← this file — read at start of every session
 ├── README.md
-├── index.html              ← sennepgames.com homepage (not yet built)
+├── index.html              ← sennepgames.com homepage
 ├── netlify.toml            ← Netlify config
 ├── .gitignore
 ├── polyverse/
@@ -24,11 +24,13 @@ sennep-games/
 ├── assets/
 │   ├── css/
 │   │   ├── global.css      ← shared styles, fonts, CSS variables
-│   │   └── polyverse.css   ← Polyverse page styles
+│   │   ├── polyverse.css   ← Polyverse page styles
+│   │   └── homepage.css    ← Homepage styles
 │   ├── js/
 │   │   └── polyverse.js
 │   └── images/
-│       └── polyverse/      ← all images for Polyverse page
+│       ├── polyverse/      ← all images for Polyverse page
+│       └── homepage/       ← all images for homepage (game card images, headline SVG)
 
 ## Design system
 - Fonts: Paytone One (headings), Manrope (body)
@@ -40,10 +42,29 @@ sennep-games/
 ### /polyverse (sennepgames.com/polyverse)
 - Status: IN PROGRESS
 - Figma sections (in order): Hero unit, Intro, Intro_2, iphone_screens, ocean_scene
+- Logo links back to homepage (../index.html)
 - Next session: subtle animation and scroll behaviour
 
 ### / (homepage)
-- Status: NOT STARTED — build after Polyverse page is complete
+- Status: IN PROGRESS — desktop build done, mobile and responsive still to do
+- Figma sections: Hero (SVG headline + tagline), 4 game cards (Polyverse, Alphaputt, OLO Loco, OLO Classic)
+- Next session: mobile layout (mobile card images: polyverse_image_mob.jpg etc. at max-width 833px), then fluid responsive scaling
+
+## Homepage — game card hover interaction
+- Each card is 1100×620px with rounded corners and overflow: hidden
+- On hover: image slides left 120px, colour panel slides in from the right
+- Panel uses CSS spring animation: cubic-bezier(0.34, 1.56, 0.64, 1), 800ms, 300ms delay on enter
+- Panel final position: translateX(50px) — sits 50px proud of the card's right edge
+- Panel structure: 652px container (translateX(100%) → translateX(50px))
+  - panel-edge: 103px radial-gradient circles, tiled vertically
+  - panel-body: 620px wide (right: -20px), covers exactly the right half of the circles
+  - Panel colour set per card via inline CSS custom property --panel-color
+- Arrow: 100×100px circle, 2px solid border, inside .game-card__panel at bottom: 50px, right: 100px
+  (right: 100px within the panel = right: 50px on the card at translateX(50px))
+- Arrow slides in with the panel — not visible on the image before hover
+- Text (title + desc): top-aligned in panel-body with 70px top padding
+- Desc copy: fixed width 400px
+- Polyverse card links to polyverse/index.html
 
 ## Mailing list + analytics
 - To be integrated after core page is built
@@ -77,11 +98,14 @@ sennep-games/
 - [x] Polyverse page — fluid responsive scaling (834px–1440px) using CSS clamp()
 - [x] Polyverse page — wide breakpoint (1441px+) — full-viewport hero with hero_wide_new.jpg
 - [x] Polyverse page — 2500px+ hero scales with browser via background-size: cover
-- [ ] Polyverse page — animation and scroll behaviour (next session)
+- [x] Polyverse page — logo links back to homepage
+- [x] Homepage — desktop build (hero + 4 game cards with hover panel animation)
+- [ ] Homepage — mobile layout (max-width 833px)
+- [ ] Homepage — fluid responsive scaling (834px–1439px)
+- [ ] Polyverse page — animation and scroll behaviour
 - [ ] Point sennepgames.com domain at Netlify
 - [ ] Mailing list integration
 - [ ] Analytics integration
-- [ ] Homepage (sennepgames.com)
 
 ## Responsive breakpoints
 - Mobile:   max-width 833px  — single column, square hero image swapped in (hero_image_sq.jpg)
@@ -93,11 +117,12 @@ sennep-games/
 ## CSS architecture
 - global.css: design tokens (colours, fonts, spacing variables using clamp() for fluid scaling)
 - polyverse.css: page layout, desktop-first with mobile @media (max-width: 833px) at bottom
+- homepage.css: homepage layout, desktop-first — mobile responsive still to be built
 - Breakpoint reference comments in global.css :root block
 
 ## How to start a new session
 1. Open Terminal
 2. Run: cd ~/Documents/sennep-games
 3. Run: claude
-4. Tell Claude: "Please read CLAUDE.md and let's continue building the Polyverse page"
+4. Tell Claude: "Please read CLAUDE.md and let's continue"
 5. Share your Figma file link when asked

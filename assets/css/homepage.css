@@ -1,0 +1,228 @@
+/* ============================================================
+   Sennep Games — Homepage styles
+   Desktop-first, designed at 1440px
+   ============================================================ */
+
+
+/* ============================================================
+   Sennep Games logo — sits above the page, top left
+   ============================================================ */
+.site-logo {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    z-index: 10;
+    display: block;
+    line-height: 0;
+}
+
+.site-logo img {
+    width: 84px;
+    height: 73px;
+}
+
+
+/* ============================================================
+   Page wrapper
+   ============================================================ */
+.page {
+    max-width: var(--page-width);
+    margin: 0 auto;
+    position: relative;
+    background-color: var(--color-bg);
+}
+
+
+/* ============================================================
+   Hero
+   ============================================================ */
+.hero {
+    background-color: var(--color-bg);
+    padding: 200px 0 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+}
+
+/* SVG headline — displayed at the height Figma specifies (322px),
+   width scales proportionally from the SVG's natural aspect ratio */
+.hero__headline img {
+    height: 322px;
+    width: auto;
+}
+
+.hero__tagline {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 40px;
+    color: var(--color-blush);
+    text-align: center;
+    text-transform: uppercase;
+    width: 454px;
+}
+
+
+/* ============================================================
+   Game cards
+   ============================================================ */
+.game-card {
+    background-color: var(--color-bg);
+    padding: 60px 0;
+}
+
+/* The anchor wraps the entire card so the whole thing is clickable */
+.game-card__link {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+/* The visible card — 1100×620, rounded corners, clips both the
+   image (when it slides left) and the panel (when off-screen) */
+.game-card__inner {
+    position: relative;
+    width: 1100px;
+    height: 620px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+
+/* ============================================================
+   Game card — image
+   Made 120px wider than the card so there is no gap exposed
+   when the image slides left on hover. The extra 120px hangs
+   off the right edge (hidden by overflow: hidden) and comes
+   into view as the image shifts.
+   ============================================================ */
+.game-card__image {
+    position: absolute;
+    inset: 0;
+    width: calc(100% + 120px);
+    height: 100%;
+    transform: translateX(0);
+    transition: transform 800ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition-delay: 0ms;
+}
+
+.game-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* ============================================================
+   Game card — hover panel
+   Starts 480px off the right edge, slides left on hover.
+   ============================================================ */
+.game-card__panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* 600px body + 52px for the half of the circles that protrudes left */
+    width: 652px;
+    height: 100%;
+    transform: translateX(100%);
+    transition: transform 800ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition-delay: 0ms;
+}
+
+/* Panel body — 600px solid colour, anchored to the right of the panel.
+   The circles overlap its left edge by ~52px (half a circle width). */
+.game-card__panel-body {
+    position: absolute;
+    right: -20px;
+    top: 0;
+    bottom: 0;
+    width: 620px;
+    background-color: var(--panel-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 70px 50px 50px 64px;
+}
+
+/* Circle edge — sits on top of the body's left edge via z-index.
+   Each circle is 103px, tiled vertically to fill the card height. */
+.game-card__panel-edge {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 103px;
+    z-index: 1;
+    background-image: radial-gradient(
+        circle 51.5px at center,
+        var(--panel-color) 51.5px,
+        transparent 51.5px
+    );
+    background-size: 103px 103px;
+    background-repeat: repeat-y;
+    background-position: center top;
+}
+
+.game-card__text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.game-card__title {
+    font-family: var(--font-heading);
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 60px;
+    color: var(--color-bg);
+    text-transform: uppercase;
+}
+
+.game-card__desc {
+    font-family: var(--font-body);
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 40px;
+    color: var(--color-bg);
+    width: 400px;
+}
+
+.game-card__arrow {
+    position: absolute;
+    bottom: 50px;
+    right: 100px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid var(--color-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-size: 36px;
+    line-height: 1;
+    color: var(--color-bg);
+    z-index: 2;
+}
+
+
+/* ============================================================
+   Hover states — desktop only
+   Image slides left, panel slides in from the right.
+   300ms delay on enter, instant on leave.
+   ============================================================ */
+@media (hover: hover) {
+
+    .game-card__link:hover .game-card__image {
+        transform: translateX(-120px);
+        transition-delay: 300ms;
+    }
+
+    .game-card__link:hover .game-card__panel {
+        transform: translateX(50px);
+        transition-delay: 300ms;
+    }
+
+}
