@@ -46,11 +46,11 @@ sennep-games/
 - Next session: subtle animation and scroll behaviour
 
 ### / (homepage)
-- Status: IN PROGRESS — desktop build done, mobile and responsive still to do
+- Status: IN PROGRESS — desktop + mobile builds done, fluid responsive scaling (834px–1439px) still to do
 - Figma sections: Hero (SVG headline + tagline), 4 game cards (Polyverse, Alphaputt, OLO Loco, OLO Classic)
-- Next session: mobile layout (mobile card images: polyverse_image_mob.jpg etc. at max-width 833px), then fluid responsive scaling
+- Next session: fluid responsive scaling (834px–1439px via clamp())
 
-## Homepage — game card hover interaction
+## Homepage — game card hover interaction (desktop)
 - Each card is 1100×620px with rounded corners and overflow: hidden
 - On hover: image slides left 120px, colour panel slides in from the right
 - Panel uses CSS spring animation: cubic-bezier(0.34, 1.56, 0.64, 1), 800ms, 300ms delay on enter
@@ -64,7 +64,21 @@ sennep-games/
 - Arrow slides in with the panel — not visible on the image before hover
 - Text (title + desc): top-aligned in panel-body with 70px top padding
 - Desc copy: fixed width 400px
+- Hover animation gated on @media (hover: hover) and (min-width: 834px) — disabled at narrow widths
 - Polyverse card links to polyverse/index.html
+
+## Homepage — mobile layout (max-width: 833px)
+- Based on Figma: home_375
+- Hero: 100px top padding, 276px wide headline, 14px tagline, 40px gap
+- Logo: 48×42px at top: 20px, left: 20px
+- Cards: 26px side margins, 30px top padding, 30px border-radius, drop shadow
+- Images: swap to _mob.jpg via <picture> + <source media="(max-width: 833px)">
+- Square images (aspect-ratio: 1) stacked above the coloured panel
+- Scalloped circle edge: ::after pseudo-element on .game-card__image — horizontal row of
+  panel-color circles (53px diameter) centered on the image/panel boundary (bottom: -26px)
+- Panel always visible (transform: none, position: relative), no animation
+- Vertical desktop circle strip hidden (display: none)
+- Title: 28px / 34px; desc: 16px / 23px; arrow: 36×36px / 1px border / margin-top: 14px
 
 ## Mailing list + analytics
 - To be integrated after core page is built
@@ -100,7 +114,7 @@ sennep-games/
 - [x] Polyverse page — 2500px+ hero scales with browser via background-size: cover
 - [x] Polyverse page — logo links back to homepage
 - [x] Homepage — desktop build (hero + 4 game cards with hover panel animation)
-- [ ] Homepage — mobile layout (max-width 833px)
+- [x] Homepage — mobile layout (max-width 833px) — square images, scalloped circle edge, rounded cards, drop shadow
 - [ ] Homepage — fluid responsive scaling (834px–1439px)
 - [ ] Polyverse page — animation and scroll behaviour
 - [ ] Point sennepgames.com domain at Netlify

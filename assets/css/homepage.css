@@ -209,11 +209,160 @@
 
 
 /* ============================================================
+   Mobile — max-width: 833px
+   Based on Figma: home_375
+   ============================================================ */
+@media (max-width: 833px) {
+
+    /* Logo — smaller, tighter to corner */
+    .site-logo {
+        top: 20px;
+        left: 20px;
+    }
+    .site-logo img {
+        width: 48px;
+        height: 42px;
+    }
+
+    /* Hero — tighter padding, smaller type */
+    .hero {
+        padding: 100px 26px 40px;
+        gap: 40px;
+    }
+    .hero__headline img {
+        height: auto;
+        width: 276px;
+        max-width: 100%;
+    }
+    .hero__tagline {
+        font-size: 14px;
+        line-height: 22px;
+        width: auto;
+    }
+
+    /* Card section — 26px side margins, 30px top gap, 20px bottom for shadow room */
+    .game-card {
+        padding: 30px 26px 20px;
+    }
+
+    /* Card link — stack vertically */
+    .game-card__link {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    /* Card inner — flex column, rounded corners clip image + panel as one unit */
+    .game-card__inner {
+        width: 100%;
+        height: auto;
+        border-radius: 30px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Image — square, full width, no slide animation */
+    .game-card__image {
+        position: relative;
+        inset: auto;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        transform: none;
+        transition: none;
+        overflow: visible;
+    }
+    .game-card__image picture,
+    .game-card__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Horizontal circle scallop at bottom of image.
+       Circles are 53px diameter, centered on the image/panel boundary.
+       bottom: -26px places the centre-line exactly on the image's bottom edge. */
+    .game-card__image::after {
+        content: '';
+        position: absolute;
+        bottom: -26px;
+        left: 0;
+        width: 100%;
+        height: 53px;
+        background-image: radial-gradient(
+            circle 26.5px at center,
+            var(--panel-color) 26.5px,
+            transparent 26.5px
+        );
+        background-size: 53px 53px;
+        background-repeat: repeat-x;
+        background-position: left center;
+        z-index: 1;
+    }
+
+    /* Panel — always visible, full width, below image, no slide animation */
+    .game-card__panel {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        height: auto;
+        transform: none;
+        transition: none;
+        background-color: var(--panel-color);
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Hide the vertical desktop circle strip */
+    .game-card__panel-edge {
+        display: none;
+    }
+
+    /* Panel body — full width, reset absolute positioning */
+    .game-card__panel-body {
+        position: relative;
+        right: auto;
+        top: auto;
+        bottom: auto;
+        width: 100%;
+        padding: 30px 26px 0 30px;
+        justify-content: flex-start;
+    }
+
+    .game-card__title {
+        font-size: 28px;
+        line-height: 34px;
+    }
+
+    .game-card__desc {
+        font-size: 16px;
+        line-height: 23px;
+        width: auto;
+    }
+
+    /* Arrow — small inline circle, sits below the description */
+    .game-card__arrow {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+        border-width: 1px;
+        margin: 14px 0 30px 30px;
+    }
+
+}
+
+
+/* ============================================================
    Hover states — desktop only
    Image slides left, panel slides in from the right.
    300ms delay on enter, instant on leave.
    ============================================================ */
-@media (hover: hover) {
+@media (hover: hover) and (min-width: 834px) {
 
     .game-card__link:hover .game-card__image {
         transform: translateX(-120px);
