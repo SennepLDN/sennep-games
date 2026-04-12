@@ -209,6 +209,91 @@
 
 
 /* ============================================================
+   Tablet — all devices 834px–1439px
+   Fluid scaling from Figma 834px values up to 1440px desktop.
+   Applies to both hover-capable and touch devices.
+   ============================================================ */
+@media (min-width: 834px) and (max-width: 1439px) {
+
+    .game-card {
+        padding: clamp(35px, 4.17vw, 60px) 0;
+    }
+
+    .game-card__inner {
+        width: clamp(637px, 76.4vw, 1100px);
+        height: clamp(359px, 43.06vw, 620px);
+        border-radius: clamp(17px, 2.08vw, 30px);
+    }
+
+    .game-card__panel {
+        width: clamp(377px, 45.28vw, 652px);
+    }
+
+    .game-card__panel-edge {
+        width: clamp(59px, 7.15vw, 103px);
+        background-image: radial-gradient(
+            circle clamp(29.5px, 3.58vw, 51.5px) at center,
+            var(--panel-color) clamp(29.5px, 3.58vw, 51.5px),
+            transparent clamp(29.5px, 3.58vw, 51.5px)
+        );
+        background-size: clamp(59px, 7.15vw, 103px) clamp(59px, 7.15vw, 103px);
+    }
+
+    .game-card__panel-body {
+        right: -20px;
+        width: clamp(368px, 43.06vw, 620px);
+        padding: clamp(40px, 4.86vw, 70px)
+                 clamp(29px, 3.47vw, 50px)
+                 clamp(29px, 3.47vw, 50px)
+                 clamp(37px, 4.44vw, 64px);
+    }
+
+    .game-card__title {
+        font-size: clamp(29px, 3.47vw, 50px);
+        line-height: clamp(35px, 4.17vw, 60px);
+    }
+
+    .game-card__desc {
+        font-size: clamp(14.5px, 1.74vw, 25px);
+        line-height: clamp(23px, 2.78vw, 40px);
+        width: clamp(231px, 27.78vw, 400px);
+    }
+
+    .game-card__arrow {
+        width: clamp(57px, 6.94vw, 100px);
+        height: clamp(57px, 6.94vw, 100px);
+        font-size: clamp(21px, 2.5vw, 36px);
+        border-width: clamp(1px, 0.14vw, 2px);
+        bottom: clamp(30px, 3.47vw, 50px);
+        right: clamp(63px, 6.94vw, 100px);
+    }
+
+}
+
+
+/* ============================================================
+   Touch — panel permanently revealed, 834px and up
+   Matches the hover end-state exactly: image -120px, panel
+   +50px. No max-width so large touch screens (iPad Pro etc.)
+   get the same treatment. Card sizing for 834–1024px is
+   inherited from the general tablet block above.
+   ============================================================ */
+@media (hover: none) and (min-width: 834px) {
+
+    .game-card__image {
+        transform: translateX(-120px);
+        transition: none;
+    }
+
+    .game-card__panel {
+        transform: translateX(50px);
+        transition: none;
+    }
+
+}
+
+
+/* ============================================================
    Mobile — max-width: 833px
    Based on Figma: home_375
    ============================================================ */

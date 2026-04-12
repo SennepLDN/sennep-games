@@ -115,7 +115,9 @@ sennep-games/
 - [x] Polyverse page — logo links back to homepage
 - [x] Homepage — desktop build (hero + 4 game cards with hover panel animation)
 - [x] Homepage — mobile layout (max-width 833px) — square images, scalloped circle edge, rounded cards, drop shadow
-- [ ] Homepage — fluid responsive scaling (834px–1439px)
+- [x] Homepage — fluid responsive scaling (834px–1439px) — game cards scale via clamp() from 834px to 1440px desktop values
+- [ ] Homepage — hero section fluid scaling (834px–1439px)
+- [ ] Individual game pages — Alphaputt, OLO Loco, OLO Classic
 - [ ] Polyverse page — animation and scroll behaviour
 - [ ] Point sennepgames.com domain at Netlify
 - [ ] Mailing list integration
@@ -131,7 +133,7 @@ sennep-games/
 ## CSS architecture
 - global.css: design tokens (colours, fonts, spacing variables using clamp() for fluid scaling)
 - polyverse.css: page layout, desktop-first with mobile @media (max-width: 833px) at bottom
-- homepage.css: homepage layout, desktop-first — mobile responsive still to be built
+- homepage.css: homepage layout, desktop-first with tablet @media (834–1439px) and mobile @media (max-width: 833px)
 - Breakpoint reference comments in global.css :root block
 
 ## How to start a new session
