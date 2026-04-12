@@ -21,16 +21,23 @@ sennep-games/
 ├── .gitignore
 ├── polyverse/
 │   └── index.html          ← sennepgames.com/polyverse
+├── alphaputt/
+│   └── index.html          ← sennepgames.com/alphaputt
 ├── assets/
 │   ├── css/
 │   │   ├── global.css      ← shared styles, fonts, CSS variables
 │   │   ├── polyverse.css   ← Polyverse page styles
+│   │   ├── alphaputt.css   ← Alphaputt page styles
 │   │   └── homepage.css    ← Homepage styles
 │   ├── js/
 │   │   └── polyverse.js
-│   └── images/
-│       ├── polyverse/      ← all images for Polyverse page
-│       └── homepage/       ← all images for homepage (game card images, headline SVG)
+│   ├── images/
+│   │   ├── polyverse/      ← all images for Polyverse page
+│   │   ├── alphaputt/      ← all images for Alphaputt page
+│   │   └── homepage/       ← all images for homepage (game card images, headline SVG)
+│   └── videos/
+│       ├── polyverse/      ← Polyverse video assets
+│       └── alphaputt/      ← Alphaputt video assets (ap_promo_sm.mp4, ap_escape.mp4)
 
 ## Design system
 - Fonts: Paytone One (headings), Manrope (body)
@@ -45,10 +52,20 @@ sennep-games/
 - Logo links back to homepage (../index.html)
 - Next session: subtle animation and scroll behaviour
 
+### /alphaputt (sennepgames.com/alphaputt)
+- Status: BUILT — desktop + mobile + fluid scaling done
+- Figma sections (in order): Hero unit, Main title, Video section, Quote, Feature 01 (Multiplayer), Feature 02 (Type Your Course), Feature 03 (Par-fection), A-Z image, Escape scene
+- Logo links back to homepage (../index.html)
+- Video player: poster image with play button, tap to play/stop, resets on end
+- Two video sections: promo (ap_promo_sm.mp4) and escape (ap_escape.mp4)
+- A-Z section: single wide image on desktop, two stacked squares on mobile
+- Next session: OLO Loco and OLO Classic pages
+
 ### / (homepage)
-- Status: IN PROGRESS — desktop + mobile builds done, fluid responsive scaling (834px–1439px) still to do
+- Status: IN PROGRESS — desktop + mobile + game card fluid scaling done, hero fluid scaling still to do
 - Figma sections: Hero (SVG headline + tagline), 4 game cards (Polyverse, Alphaputt, OLO Loco, OLO Classic)
-- Next session: fluid responsive scaling (834px–1439px via clamp())
+- Polyverse card links to polyverse/index.html, Alphaputt card links to alphaputt/index.html
+- Next session: hero section fluid scaling (834px–1439px)
 
 ## Homepage — game card hover interaction (desktop)
 - Each card is 1100×620px with rounded corners and overflow: hidden
@@ -117,7 +134,8 @@ sennep-games/
 - [x] Homepage — mobile layout (max-width 833px) — square images, scalloped circle edge, rounded cards, drop shadow
 - [x] Homepage — fluid responsive scaling (834px–1439px) — game cards scale via clamp() from 834px to 1440px desktop values
 - [ ] Homepage — hero section fluid scaling (834px–1439px)
-- [ ] Individual game pages — Alphaputt, OLO Loco, OLO Classic
+- [x] Alphaputt page — desktop + mobile + fluid scaling, video player with play/stop/reset
+- [ ] Individual game pages — OLO Loco, OLO Classic
 - [ ] Polyverse page — animation and scroll behaviour
 - [ ] Point sennepgames.com domain at Netlify
 - [ ] Mailing list integration
@@ -134,6 +152,7 @@ sennep-games/
 - global.css: design tokens (colours, fonts, spacing variables using clamp() for fluid scaling)
 - polyverse.css: page layout, desktop-first with mobile @media (max-width: 833px) at bottom
 - homepage.css: homepage layout, desktop-first with tablet @media (834–1439px) and mobile @media (max-width: 833px)
+- alphaputt.css: Alphaputt page layout, desktop-first with mobile @media (max-width: 833px), shared .video-player component
 - Breakpoint reference comments in global.css :root block
 
 ## How to start a new session
