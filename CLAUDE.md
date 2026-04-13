@@ -172,6 +172,7 @@ sennep-games/
 - [x] Homepage headline updated to headline_optical.svg
 - [x] Homepage mobile tagline fixed at 263px width
 - [x] All homepage game cards linked to their respective pages
+- [x] Polyverse iPhone screens section — overflow: hidden to prevent horizontal scroll on tablet
 - [ ] Polyverse page — animation and scroll behaviour
 - [ ] Point sennepgames.com domain at Netlify
 - [ ] Mailing list integration

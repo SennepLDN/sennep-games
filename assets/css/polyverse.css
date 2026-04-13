@@ -154,6 +154,7 @@
 .screens {
     background-color: var(--color-bg);
     padding: var(--space-section-y) 0;
+    overflow: hidden;
 }
 
 .screens__track {
