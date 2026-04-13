@@ -51,8 +51,8 @@
 /* Sennep Games logo — top left */
 .hero__logo {
     position: absolute;
-    top: clamp(24px, 2.78vw, 40px);
-    left: clamp(24px, 2.78vw, 40px);
+    top: clamp(20px, 2.78vw, 40px);
+    left: clamp(20px, 2.78vw, 40px);
 }
 
 .hero__logo img {
@@ -174,7 +174,7 @@
    ============================================================ */
 .ocean {
     background-color: var(--color-bg);
-    padding: var(--space-section-y) 0 clamp(139px, 16.67vw, 240px);
+    padding: var(--space-section-y) 0;
     display: flex;
     flex-direction: column;
     gap: var(--space-col-gap);
@@ -203,6 +203,102 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+
+/* ============================================================
+   Also from Sennep Games
+   ============================================================ */
+.other-games {
+    background-color: var(--color-bg);
+    padding: var(--space-section-y) 0 clamp(139px, 16.67vw, 240px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-col-gap);
+}
+
+.other-games__heading {
+    text-align: center;
+}
+
+.other-games__grid {
+    display: flex;
+    gap: clamp(17px, 2.08vw, 30px);
+    justify-content: center;
+    padding: 0 var(--space-margin-x);
+}
+
+.game-card-mini {
+    flex: 0 0 clamp(187px, 22.43vw, 323px);
+    width: clamp(187px, 22.43vw, 323px);
+    background-color: var(--card-color);
+    border-radius: 30px;
+    overflow: hidden;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-card-mini__image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+}
+
+.game-card-mini__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.game-card-mini__image::after {
+    content: '';
+    position: absolute;
+    bottom: -27px;
+    left: 0;
+    width: 100%;
+    height: 54px;
+    background-image: radial-gradient(
+        circle 27px at center,
+        var(--card-color) 27px,
+        transparent 27px
+    );
+    background-size: calc(100% / 6) 54px;
+    background-repeat: repeat-x;
+    background-position: left center;
+    z-index: 1;
+}
+
+.game-card-mini__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: clamp(17px, 2.08vw, 30px) clamp(12px, 1.39vw, 20px) clamp(35px, 4.17vw, 60px);
+}
+
+.game-card-mini__title {
+    font-family: var(--font-heading);
+    font-size: clamp(16px, 1.94vw, 28px);
+    font-weight: 400;
+    line-height: clamp(20px, 2.36vw, 34px);
+    color: var(--color-bg);
+    text-transform: uppercase;
+}
+
+.game-card-mini__arrow {
+    width: clamp(18px, 2.22vw, 32px);
+    height: clamp(18px, 2.22vw, 32px);
+    border-radius: 50%;
+    border: 1.5px solid var(--color-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-size: clamp(9px, 1.11vw, 16px);
+    line-height: 1;
+    color: var(--color-bg);
 }
 
 
@@ -264,8 +360,8 @@
   }
 
   .hero__logo {
-    top: 26px;
-    left: 26px;
+    top: 20px;
+    left: 20px;
   }
 
   .hero__logo img {
@@ -388,6 +484,46 @@
     width: 102px;
     height: 221px;
     border-radius: 10px;
+  }
+
+
+  /* --- Also from Sennep Games --- */
+  .other-games {
+    padding: 60px 0;
+    gap: 30px;
+  }
+
+  .other-games__heading {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .other-games__grid {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 26px;
+    gap: 30px;
+  }
+
+  .game-card-mini {
+    flex: none;
+    width: 323px;
+    max-width: 100%;
+  }
+
+  .game-card-mini__title {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .game-card-mini__arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  .game-card-mini__info {
+    padding: 30px 20px 60px;
   }
 
 }

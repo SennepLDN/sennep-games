@@ -23,21 +23,31 @@ sennep-games/
 │   └── index.html          ← sennepgames.com/polyverse
 ├── alphaputt/
 │   └── index.html          ← sennepgames.com/alphaputt
+├── olo-loco/
+│   └── index.html          ← sennepgames.com/olo-loco
+├── olo-classic/
+│   └── index.html          ← sennepgames.com/olo-classic
 ├── assets/
 │   ├── css/
 │   │   ├── global.css      ← shared styles, fonts, CSS variables
 │   │   ├── polyverse.css   ← Polyverse page styles
 │   │   ├── alphaputt.css   ← Alphaputt page styles
+│   │   ├── olo-loco.css    ← OLO Loco page styles
+│   │   ├── olo-classic.css ← OLO Classic page styles
 │   │   └── homepage.css    ← Homepage styles
 │   ├── js/
 │   │   └── polyverse.js
 │   ├── images/
-│   │   ├── polyverse/      ← all images for Polyverse page
-│   │   ├── alphaputt/      ← all images for Alphaputt page
-│   │   └── homepage/       ← all images for homepage (game card images, headline SVG)
+│   │   ├── polyverse/      ← Polyverse images + logo SVGs (logo.svg, logo-dark.svg)
+│   │   ├── alphaputt/      ← Alphaputt images
+│   │   ├── olo_loco/       ← OLO Loco images
+│   │   ├── olo/            ← OLO Classic images
+│   │   └── homepage/       ← Homepage images (game cards, headline SVG)
 │   └── videos/
 │       ├── polyverse/      ← Polyverse video assets
-│       └── alphaputt/      ← Alphaputt video assets (ap_promo_sm.mp4, ap_escape.mp4)
+│       ├── alphaputt/      ← Alphaputt video assets
+│       ├── olo_loco/       ← OLO Loco video assets
+│       └── olo/            ← OLO Classic video assets
 
 ## Design system
 - Fonts: Paytone One (headings), Manrope (body)
@@ -47,24 +57,41 @@ sennep-games/
 
 ## Pages
 ### /polyverse (sennepgames.com/polyverse)
-- Status: IN PROGRESS
-- Figma sections (in order): Hero unit, Intro, Intro_2, iphone_screens, ocean_scene
+- Status: BUILT — desktop + mobile + fluid scaling done
+- Figma sections (in order): Hero unit, Intro, Intro_2, iphone_screens, ocean_scene, Also from Sennep Games
 - Logo links back to homepage (../index.html)
+- "Also from" section links to Alphaputt, OLO Loco, OLO Classic
 - Next session: subtle animation and scroll behaviour
 
 ### /alphaputt (sennepgames.com/alphaputt)
 - Status: BUILT — desktop + mobile + fluid scaling done
-- Figma sections (in order): Hero unit, Main title, Video section, Quote, Feature 01 (Multiplayer), Feature 02 (Type Your Course), Feature 03 (Par-fection), A-Z image, Escape scene
-- Logo links back to homepage (../index.html)
+- Figma sections (in order): Hero unit, Main title, Video section, Quote, 3 features, A-Z image, Escape scene, Also from Sennep Games
+- Dark logo (logo-dark.svg), links back to homepage
 - Video player: poster image with play button, tap to play/stop, resets on end
 - Two video sections: promo (ap_promo_sm.mp4) and escape (ap_escape.mp4)
 - A-Z section: single wide image on desktop, two stacked squares on mobile
-- Next session: OLO Loco and OLO Classic pages
+- "Also from" section links to Polyverse, OLO Loco, OLO Classic
+
+### /olo-loco (sennepgames.com/olo-loco)
+- Status: BUILT — desktop + mobile + fluid scaling done
+- Figma sections (in order): Hero unit, Main title, Video section (promo), Quote, 3 features, Video section 2 (devices autoplay), Reverso Mode (autoplay), Also from Sennep Games
+- Dark logo (logo-dark.svg), links back to homepage
+- Promo video: play/stop/reset (OLO_LOCO_1920x1080.mp4)
+- Devices + Reverso videos: autoplay, loop, muted
+- "Also from" section links to Polyverse, Alphaputt, OLO Classic
+
+### /olo-classic (sennepgames.com/olo-classic)
+- Status: BUILT — desktop + mobile + fluid scaling done
+- Figma sections (in order): Hero unit, Main title, Video section (promo), Quote, 2 features, Safari Theme (autoplay), Also from Sennep Games
+- Dark logo (logo-dark.svg), links back to homepage
+- Promo video: play/stop/reset (olo_game_sm.mp4)
+- Safari video: autoplay, loop, muted (olo_safari_sm.mp4)
+- "Also from" section links to Polyverse, Alphaputt, OLO Loco
 
 ### / (homepage)
 - Status: IN PROGRESS — desktop + mobile + game card fluid scaling done, hero fluid scaling still to do
-- Figma sections: Hero (SVG headline + tagline), 4 game cards (Polyverse, Alphaputt, OLO Loco, OLO Classic)
-- Polyverse card links to polyverse/index.html, Alphaputt card links to alphaputt/index.html
+- Figma sections: Hero (SVG headline_optical + tagline), 4 game cards (Polyverse, Alphaputt, OLO Loco, OLO Classic)
+- All 4 game cards link to their respective pages
 - Next session: hero section fluid scaling (834px–1439px)
 
 ## Homepage — game card hover interaction (desktop)
@@ -135,7 +162,16 @@ sennep-games/
 - [x] Homepage — fluid responsive scaling (834px–1439px) — game cards scale via clamp() from 834px to 1440px desktop values
 - [ ] Homepage — hero section fluid scaling (834px–1439px)
 - [x] Alphaputt page — desktop + mobile + fluid scaling, video player with play/stop/reset
-- [ ] Individual game pages — OLO Loco, OLO Classic
+- [x] OLO Loco page — desktop + mobile + fluid scaling, promo video + autoplay devices/reverso videos
+- [x] OLO Classic page — desktop + mobile + fluid scaling, promo video + autoplay safari video
+- [x] "Also from Sennep Games" cross-promotion on all 4 game pages with scalloped mini cards
+- [x] Dark logo variant (logo-dark.svg) for Alphaputt, OLO Loco, OLO Classic pages
+- [x] Consistent logo padding: 40px desktop, 20px mobile across all pages
+- [x] Homepage game card circles — exactly 6 on both vertical (desktop) and horizontal (mobile) edges
+- [x] Homepage panel body width uses calc() to align precisely with circle centres at all viewports
+- [x] Homepage headline updated to headline_optical.svg
+- [x] Homepage mobile tagline fixed at 263px width
+- [x] All homepage game cards linked to their respective pages
 - [ ] Polyverse page — animation and scroll behaviour
 - [ ] Point sennepgames.com domain at Netlify
 - [ ] Mailing list integration
@@ -153,6 +189,9 @@ sennep-games/
 - polyverse.css: page layout, desktop-first with mobile @media (max-width: 833px) at bottom
 - homepage.css: homepage layout, desktop-first with tablet @media (834–1439px) and mobile @media (max-width: 833px)
 - alphaputt.css: Alphaputt page layout, desktop-first with mobile @media (max-width: 833px), shared .video-player component
+- olo-loco.css: OLO Loco page layout, same pattern as Alphaputt + reverso/other-games sections
+- olo-classic.css: OLO Classic page layout, same pattern + safari/other-games sections
+- All game page CSS files include .game-card-mini styles for "Also from Sennep Games" cross-promotion
 - Breakpoint reference comments in global.css :root block
 
 ## How to start a new session
