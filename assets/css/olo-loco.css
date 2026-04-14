@@ -108,6 +108,7 @@
     color: var(--color-heading);
     max-width: clamp(463px, 57.08vw, 822px);
     text-align: center;
+    text-transform: uppercase;
 }
 
 

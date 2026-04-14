@@ -58,15 +58,17 @@ sennep-games/
 ## Pages
 ### /polyverse (sennepgames.com/polyverse)
 - Status: BUILT — desktop + mobile + fluid scaling done
-- Figma sections (in order): Hero unit, Intro, Intro_2, iphone_screens, ocean_scene, Also from Sennep Games
+- Figma sections (in order): Hero unit, Intro, Intro_2, iphone_screens, ocean_scene, Sign Up, Also from Sennep Games
 - Logo links back to homepage (../index.html)
+- Sign Up section: "Get in early" panel with button linking to Google Form (opens new tab), hover snaps to mid blue (#274D65)
 - "Also from" section links to Alphaputt, OLO Loco, OLO Classic
 - Next session: subtle animation and scroll behaviour
 
 ### /alphaputt (sennepgames.com/alphaputt)
 - Status: BUILT — desktop + mobile + fluid scaling done
-- Figma sections (in order): Hero unit, Main title, Video section, Quote, 3 features, A-Z image, Escape scene, Also from Sennep Games
+- Figma sections (in order): Hero unit, Main title, App Links, Video section, Quote, 3 features, A-Z image, Escape scene, Also from Sennep Games
 - Dark logo (logo-dark.svg), links back to homepage
+- App Links: iOS App Store + Viverse buttons (100px desktop, 50px mobile), hover swaps to light blue circle variant
 - Video player: poster image with play button, tap to play/stop, resets on end
 - Two video sections: promo (ap_promo_sm.mp4) and escape (ap_escape.mp4)
 - A-Z section: single wide image on desktop, two stacked squares on mobile
@@ -175,6 +177,13 @@ sennep-games/
 - [x] Analytics — Cloudflare Web Analytics added to all 5 pages
 - [x] content.md — extracted all visible copy across the site for editorial review
 - [x] Open Graph + Twitter/X meta tags on all 5 pages (absolute image URLs via assets/images/og/)
+- [x] Footer — added to all 5 pages (scalloped circle edge, links, social icons, desktop + mobile)
+- [x] Polyverse Sign Up section — "Get in early" panel with Google Form link
+- [x] Alphaputt App Links — iOS App Store + Viverse buttons with hover state SVGs
+- [x] Title section tagline uppercase on all game pages
+- [x] Instagram footer link updated to sennep_games
+- [x] Homepage 120px gap before footer
+- [x] Polyverse iPhone screens — only clip below 1440px, full display on wider screens
 - [ ] Polyverse page — animation and scroll behaviour
 - [x] Point sennepgames.com domain at Netlify
 - [ ] Mailing list integration
