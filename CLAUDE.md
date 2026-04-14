@@ -125,9 +125,8 @@ sennep-games/
 - Title: 28px / 34px; desc: 16px / 23px; arrow: 36×36px / 1px border / margin-top: 14px
 
 ## Mailing list + analytics
-- To be integrated after core page is built
-- Likely Mailchimp embed for mailing list
-- Analytics TBD (Google Analytics or Plausible)
+- Analytics: Cloudflare Web Analytics — snippet added to all 5 HTML pages (token: e3170e2c4fa24565a236b3cf2ba2d98e)
+- Mailing list: TBD — likely Mailchimp embed
 
 ## Deployment
 - Netlify connected to this GitHub repo
@@ -173,10 +172,11 @@ sennep-games/
 - [x] Homepage mobile tagline fixed at 263px width
 - [x] All homepage game cards linked to their respective pages
 - [x] Polyverse iPhone screens section — overflow: hidden to prevent horizontal scroll on tablet
+- [x] Analytics — Cloudflare Web Analytics added to all 5 pages
+- [x] content.md — extracted all visible copy across the site for editorial review
 - [ ] Polyverse page — animation and scroll behaviour
 - [ ] Point sennepgames.com domain at Netlify
 - [ ] Mailing list integration
-- [ ] Analytics integration
 
 ## Responsive breakpoints
 - Mobile:   max-width 833px  — single column, square hero image swapped in (hero_image_sq.jpg)
