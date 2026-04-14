@@ -174,6 +174,7 @@ sennep-games/
 - [x] Polyverse iPhone screens section — overflow: hidden to prevent horizontal scroll on tablet
 - [x] Analytics — Cloudflare Web Analytics added to all 5 pages
 - [x] content.md — extracted all visible copy across the site for editorial review
+- [x] Open Graph + Twitter/X meta tags on all 5 pages (absolute image URLs via assets/images/og/)
 - [ ] Polyverse page — animation and scroll behaviour
 - [x] Point sennepgames.com domain at Netlify
 - [ ] Mailing list integration
