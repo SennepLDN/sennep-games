@@ -18,7 +18,7 @@
 <body>
 
     <a class="site-logo" href="/">
-        <img src="assets/images/polyverse/logo.svg" alt="Sennep Games" width="84" height="73">
+        <img src="assets/images/shared/logo.svg" alt="Sennep Games" width="84" height="73">
     </a>
 
     <main class="page">
@@ -38,7 +38,7 @@
              ================================ -->
         <section class="game-card" style="--panel-color: #B6D9E1">
             <a class="game-card__link" href="polyverse/index.html">
-                <div class="game-card__inner">
+                <div class="game-card__inner animate-in">
                     <div class="game-card__image">
                         <picture>
                             <source media="(max-width: 833px)" srcset="assets/images/homepage/polyverse_image_mob.jpg">
@@ -64,7 +64,7 @@
              ================================ -->
         <section class="game-card" style="--panel-color: #FFD4D1">
             <a class="game-card__link" href="alphaputt/index.html">
-                <div class="game-card__inner">
+                <div class="game-card__inner animate-in">
                     <div class="game-card__image">
                         <picture>
                             <source media="(max-width: 833px)" srcset="assets/images/homepage/alphaputt_image_mob.jpg">
@@ -90,7 +90,7 @@
              ================================ -->
         <section class="game-card" style="--panel-color: #FFD05F">
             <a class="game-card__link" href="olo-loco/index.html">
-                <div class="game-card__inner">
+                <div class="game-card__inner animate-in">
                     <div class="game-card__image">
                         <picture>
                             <source media="(max-width: 833px)" srcset="assets/images/homepage/olo_loco_image_mob.jpg">
@@ -116,7 +116,7 @@
              ================================ -->
         <section class="game-card" style="--panel-color: #73CFAA">
             <a class="game-card__link" href="olo-classic/index.html">
-                <div class="game-card__inner">
+                <div class="game-card__inner animate-in">
                     <div class="game-card__image">
                         <picture>
                             <source media="(max-width: 833px)" srcset="assets/images/homepage/olo_classic_image_mob.jpg">
@@ -141,7 +141,7 @@
 
     <footer class="footer">
         <div class="footer__inner">
-            <div class="footer__content">
+            <div class="footer__content animate-in">
                 <h2 class="footer__heading">Get in touch</h2>
                 <div class="footer__links">
                     <a href="mailto:hello@sennep.com" target="_blank" rel="noopener">hello@sennep.com</a>
@@ -161,6 +161,21 @@
         </div>
     </footer>
 
+    <script>
+        (function () {
+            var elements = document.querySelectorAll('.animate-in');
+            if (!elements.length) return;
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
+            elements.forEach(function (el) { observer.observe(el); });
+        })();
+    </script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e3170e2c4fa24565a236b3cf2ba2d98e"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

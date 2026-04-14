@@ -38,10 +38,13 @@ sennep-games/
 │   ├── js/
 │   │   └── polyverse.js
 │   ├── images/
-│   │   ├── polyverse/      ← Polyverse images + logo SVGs (logo.svg, logo-dark.svg)
+│   │   ├── shared/         ← Shared assets (logo.svg, logo-dark.svg)
+│   │   ├── polyverse/      ← Polyverse images
 │   │   ├── alphaputt/      ← Alphaputt images
 │   │   ├── olo_loco/       ← OLO Loco images
 │   │   ├── olo/            ← OLO Classic images
+│   │   ├── footer/         ← Footer social icons
+│   │   ├── og/             ← Open Graph images
 │   │   └── homepage/       ← Homepage images (game cards, headline SVG)
 │   └── videos/
 │       ├── polyverse/      ← Polyverse video assets
@@ -187,7 +190,8 @@ sennep-games/
 - [x] Sticky hero on all game pages — image + logo fixed, content scrolls over
 - [x] Achievement badges — fixed with hero on desktop, scroll with content on mobile (dual HTML approach)
 - [x] Wide viewport (1441px+) — page max-width removed, content centred via calc padding, hero full-width
-- [x] Scroll-triggered entrance animations on all 4 game pages — IntersectionObserver + CSS transitions
+- [x] Scroll-triggered entrance animations on all 4 game pages + homepage — IntersectionObserver + CSS transitions
+- [x] Logos moved to assets/images/shared/ — referenced from all 5 pages
 - [x] Point sennepgames.com domain at Netlify
 - [ ] Mailing list integration
 
