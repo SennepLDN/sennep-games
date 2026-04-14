@@ -38,7 +38,9 @@
    Hero Unit
    ============================================================ */
 .hero {
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 0;
     width: 100%;
     height: clamp(470px, 56.32vw, 811px);
     background-color: var(--color-bg-hero);
@@ -46,6 +48,12 @@
     background-size: cover;
     background-position: center;
     overflow: hidden;
+}
+
+/* All content after hero scrolls above it */
+.page > :not(.hero) {
+    position: relative;
+    z-index: 1;
 }
 
 /* Sennep Games logo — top left */
@@ -60,14 +68,18 @@
     height: clamp(42px, 5.07vw, 73px);
 }
 
-/* Award badges — bottom right */
-.hero__achievements {
+/* Award badges — desktop: inside hero, stays fixed; mobile: outside hero, scrolls */
+.hero__achievements--desktop {
     position: absolute;
     bottom: clamp(24px, 2.78vw, 40px);
     right: clamp(24px, 2.78vw, 40px);
     display: flex;
     gap: clamp(12px, 1.39vw, 20px);
     align-items: flex-end;
+}
+
+.hero__achievements--mobile {
+    display: none;
 }
 
 .achievement img {
@@ -374,11 +386,17 @@
    ============================================================ */
 @media (min-width: 1441px) {
 
+  .page {
+    max-width: none;
+  }
+
+  .page > :not(.hero) {
+    padding-left: calc((100vw - 1440px) / 2);
+    padding-right: calc((100vw - 1440px) / 2);
+  }
+
   .hero {
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 100%;
     height: 811px;
     background-image: url('../images/polyverse/hero_wide_new.jpg');
     background-size: auto 811px;
@@ -436,13 +454,19 @@
     height: 42px;
   }
 
-  .hero__achievements {
-    position: static;
-    background-color: var(--color-bg);
+  .hero__achievements--desktop {
+    display: none;
+  }
+
+  .hero__achievements--mobile {
+    display: flex;
+    position: relative;
+    z-index: 1;
     justify-content: center;
     align-items: center;
     gap: 14px;
     padding: 30px 26px;
+    background-color: var(--color-bg);
   }
 
   .achievement img {

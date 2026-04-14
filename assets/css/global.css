@@ -94,6 +94,8 @@ img {
   background-color: var(--color-bg);
   padding-top: 12.5vw;
   overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 
 .footer__inner {

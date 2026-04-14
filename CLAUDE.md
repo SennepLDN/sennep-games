@@ -184,6 +184,9 @@ sennep-games/
 - [x] Instagram footer link updated to sennep_games
 - [x] Homepage 120px gap before footer
 - [x] Polyverse iPhone screens — only clip below 1440px, full display on wider screens
+- [x] Sticky hero on all game pages — image + logo fixed, content scrolls over
+- [x] Achievement badges — fixed with hero on desktop, scroll with content on mobile (dual HTML approach)
+- [x] Wide viewport (1441px+) — page max-width removed, content centred via calc padding, hero full-width
 - [ ] Polyverse page — animation and scroll behaviour
 - [x] Point sennepgames.com domain at Netlify
 - [ ] Mailing list integration
