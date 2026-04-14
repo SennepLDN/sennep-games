@@ -132,7 +132,7 @@ sennep-games/
 - Netlify connected to this GitHub repo
 - Every push to main branch auto-deploys
 - Temporary live URL: https://rainbow-bavarois-9e5d79.netlify.app
-- Custom domain: sennepgames.com (DNS to be pointed at Netlify — do this after Polyverse page is built)
+- Custom domain: sennepgames.com — live, DNS pointed at Netlify
 - Netlify account: SennepLDN on Netlify, connected to GitHub SennepLDN/sennep-games
 
 ## Session notes
@@ -175,7 +175,7 @@ sennep-games/
 - [x] Analytics — Cloudflare Web Analytics added to all 5 pages
 - [x] content.md — extracted all visible copy across the site for editorial review
 - [ ] Polyverse page — animation and scroll behaviour
-- [ ] Point sennepgames.com domain at Netlify
+- [x] Point sennepgames.com domain at Netlify
 - [ ] Mailing list integration
 
 ## Responsive breakpoints
@@ -201,3 +201,23 @@ sennep-games/
 3. Run: claude
 4. Tell Claude: "Please read CLAUDE.md and let's continue"
 5. Share your Figma file link when asked
+
+## Technical overview
+
+**Hosting & Deployment**
+Static site hosted on Netlify, auto-deploying from the main branch on GitHub (SennepLDN/sennep-games). Every push to main goes live automatically. Custom domain sennepgames.com is live with DNS pointed at Netlify.
+
+**Codebase**
+Plain HTML/CSS/JS — no frameworks, no build tools, no dependencies. Five pages: homepage, Polyverse, Alphaputt, OLO Loco, OLO Classic. CSS split across a shared global.css for design tokens and per-page stylesheets. One JS file (polyverse.js). All assets — images, videos, fonts — served statically.
+
+**Design system**
+Figma is the design source of truth. Fonts are Paytone One and Manrope via Google Fonts. CSS variables in global.css match Figma tokens. Responsive across five breakpoints from 375px mobile up to 2500px+ widescreen, using CSS clamp() for fluid scaling.
+
+**Analytics**
+Cloudflare Web Analytics — free, cookieless, privacy-first. JS snippet added manually to all five pages. No cookie consent banner required.
+
+**Version control**
+GitHub repo at SennepLDN/sennep-games. Connected to Netlify for auto-deploy.
+
+**Still to set up**
+Favicon, Open Graph images, footer, privacy page, mailing list (likely Mailchimp), homepage hero fluid scaling (834px–1439px), Polyverse animation and scroll behaviour.
