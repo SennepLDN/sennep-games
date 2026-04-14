@@ -62,7 +62,7 @@ sennep-games/
 - Logo links back to homepage (../index.html)
 - Sign Up section: "Get in early" panel with button linking to Google Form (opens new tab), hover snaps to mid blue (#274D65)
 - "Also from" section links to Alphaputt, OLO Loco, OLO Classic
-- Next session: subtle animation and scroll behaviour
+- Scroll-triggered entrance animations via IntersectionObserver (polyverse.js)
 
 ### /alphaputt (sennepgames.com/alphaputt)
 - Status: BUILT — desktop + mobile + fluid scaling done
@@ -187,7 +187,7 @@ sennep-games/
 - [x] Sticky hero on all game pages — image + logo fixed, content scrolls over
 - [x] Achievement badges — fixed with hero on desktop, scroll with content on mobile (dual HTML approach)
 - [x] Wide viewport (1441px+) — page max-width removed, content centred via calc padding, hero full-width
-- [ ] Polyverse page — animation and scroll behaviour
+- [x] Scroll-triggered entrance animations on all 4 game pages — IntersectionObserver + CSS transitions
 - [x] Point sennepgames.com domain at Netlify
 - [ ] Mailing list integration
 
