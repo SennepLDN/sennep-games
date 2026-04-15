@@ -446,7 +446,7 @@
   */
   .hero {
     height: auto;
-    background-image: url('../images/polyverse/hero_image_sq.jpg');
+    background-image: url('../images/polyverse/polyverse_hero_landscape.jpg');
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: center top;
@@ -458,7 +458,7 @@
   .hero::before {
     content: '';
     display: block;
-    padding-top: 100%;
+    padding-top: 76.45%;
     flex-shrink: 0;
   }
 

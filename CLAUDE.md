@@ -198,6 +198,7 @@ sennep-games/
 - [x] Logo mask re-evaluates on browser resize (debounced), switches between full/mini logos at 1440px threshold
 - [x] Title/tagline animate-in on all game pages, consistent gap (clamp 26–45px)
 - [x] Polyverse iPhone screens — overflow: hidden at all sizes to prevent horizontal scroll at 1424–1796px
+- [x] Mobile hero images — switched from square to landscape (1622×1240, 76.45% ratio) on all 4 game pages
 - [x] Point sennepgames.com domain at Netlify
 - [ ] Mailing list integration
 
