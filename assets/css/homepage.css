@@ -16,6 +16,13 @@
     line-height: 0;
 }
 
+@media (min-width: 1440px) {
+    .site-logo {
+        position: fixed;
+        z-index: 100;
+    }
+}
+
 .site-logo img {
     width: 84px;
     height: 73px;

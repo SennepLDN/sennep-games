@@ -56,11 +56,34 @@
     z-index: 1;
 }
 
-/* Sennep Games logo — top left */
+/* Sennep Games logo — top left, fixed on desktop */
 .hero__logo {
-    position: absolute;
+    position: fixed;
     top: clamp(20px, 2.78vw, 40px);
     left: clamp(20px, 2.78vw, 40px);
+    z-index: 100;
+    line-height: 0;
+}
+
+/* Below 1440px: dark base + mini mask, hide light */
+.hero__logo--light {
+    display: none;
+}
+
+.hero__logo--mini {
+    clip-path: inset(100% 0 0 0);
+}
+
+/* 1440px+: dark base + light mask, hide mini */
+@media (min-width: 1440px) {
+    .hero__logo--light {
+        display: block;
+        clip-path: inset(100% 0 0 0);
+    }
+
+    .hero__logo--mini {
+        display: none;
+    }
 }
 
 .hero__logo img {
@@ -101,7 +124,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: clamp(43px, 5.21vw, 75px);
+    gap: clamp(26px, 3.13vw, 45px);
 }
 
 .title-section__heading {
@@ -123,6 +146,8 @@
     max-width: clamp(463px, 57.08vw, 822px);
     text-align: center;
     text-transform: uppercase;
+    position: relative;
+    z-index: 2;
 }
 
 
@@ -506,8 +531,14 @@
     }
 
     .hero__logo {
+        position: absolute;
         top: 20px;
         left: 20px;
+        z-index: 10;
+    }
+
+    .hero__logo--light {
+        display: none;
     }
 
     .hero__logo img {

@@ -192,6 +192,11 @@ sennep-games/
 - [x] Wide viewport (1441px+) — page max-width removed, content centred via calc padding, hero full-width
 - [x] Scroll-triggered entrance animations on all 4 game pages + homepage — IntersectionObserver + CSS transitions
 - [x] Logos moved to assets/images/shared/ — referenced from all 5 pages
+- [x] Fixed logo on all game pages — position: fixed, z-index: 100, stays above scrolling content
+- [x] Logo colour mask on Alphaputt/OLO Loco/OLO Classic — dual stacked logos with clip-path masking
+- [x] Logo mask below 1440px on all 4 game pages — mini-logo.svg masks in, dark base fades out, mini slides -30px left
+- [x] Logo mask re-evaluates on browser resize (debounced), switches between full/mini logos at 1440px threshold
+- [x] Title/tagline animate-in on all game pages, consistent gap (clamp 26–45px)
 - [x] Point sennepgames.com domain at Netlify
 - [ ] Mailing list integration
 
