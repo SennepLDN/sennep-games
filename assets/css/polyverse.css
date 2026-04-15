@@ -190,12 +190,7 @@
 .screens {
     background-color: var(--color-bg);
     padding: var(--space-section-y) 0;
-}
-
-@media (max-width: 1440px) {
-    .screens {
-        overflow: hidden;
-    }
+    overflow: hidden;
 }
 
 .screens__track {
