@@ -13,14 +13,18 @@ Sennep is an independent design/games studio based in London. Shipped titles inc
 - Figma is the design source of truth
 
 ## File structure
-sennep-games/
+~/Projects/sennep-games/
 ├── CLAUDE.md               ← this file — read at start of every session
 ├── README.md
 ├── index.html              ← sennepgames.com homepage
 ├── netlify.toml            ← Netlify config
 ├── .gitignore
 ├── polyverse/
-│   └── index.html          ← sennepgames.com/polyverse
+│   ├── index.html          ← sennepgames.com/polyverse
+│   ├── privacy/
+│   │   └── index.html      ← sennepgames.com/polyverse/privacy
+│   └── terms/
+│       └── index.html      ← sennepgames.com/polyverse/terms
 ├── alphaputt/
 │   └── index.html          ← sennepgames.com/alphaputt
 ├── olo-loco/
@@ -34,7 +38,8 @@ sennep-games/
 │   │   ├── alphaputt.css   ← Alphaputt page styles
 │   │   ├── olo-loco.css    ← OLO Loco page styles
 │   │   ├── olo-classic.css ← OLO Classic page styles
-│   │   └── homepage.css    ← Homepage styles
+│   │   ├── homepage.css    ← Homepage styles
+│   │   └── legal.css       ← Legal pages (Privacy, Terms)
 │   ├── js/
 │   │   └── polyverse.js
 │   ├── images/
@@ -66,6 +71,20 @@ sennep-games/
 - Sign Up section: "Get in early" panel with button linking to Google Form (opens new tab), hover snaps to mid blue (#274D65)
 - "Also from" section links to Alphaputt, OLO Loco, OLO Classic
 - Scroll-triggered entrance animations via IntersectionObserver (polyverse.js)
+
+### /polyverse/privacy (sennepgames.com/polyverse/privacy)
+- Status: BUILT — desktop + tablet + mobile
+- Cream background (#EFE4DF), 800px reading column, dark logo absolute top-left, links to homepage
+- Sections: Privacy Policy heading, intro, then What we collect / How we use it / Third-party services / How long we keep data / App Tracking Transparency / Your choices / Children / Contact / Updates
+- Pill button at the bottom links back to the Polyverse page (light blue #B6D9E1 → mid blue #274D65 on hover)
+- No JS dependencies (renders cleanly in iOS in-app webview); Cloudflare Analytics included
+- Uses shared legal.css
+
+### /polyverse/terms (sennepgames.com/polyverse/terms)
+- Status: BUILT — desktop + tablet + mobile
+- Same scaffolding as Privacy (cream bg, 800px column, dark logo, pill button, shared legal.css)
+- Sections: Terms of Use heading, intro, then Using the game / Gameplay and progress / Updates and availability / Liability / Governing law / Intellectual property / Contact
+- Pill button links back to the Polyverse page
 
 ### /alphaputt (sennepgames.com/alphaputt)
 - Status: BUILT — desktop + mobile + fluid scaling done
@@ -148,7 +167,7 @@ sennep-games/
 
 ## Current session status
 - [x] GitHub repo created
-- [x] Repo cloned to Mac (~Documents/sennep-games)
+- [x] Repo cloned to Mac (~/Projects/sennep-games)
 - [x] Folder structure created
 - [x] CLAUDE.md written
 - [x] netlify.toml configured
@@ -200,6 +219,10 @@ sennep-games/
 - [x] Polyverse iPhone screens — overflow: hidden at all sizes to prevent horizontal scroll at 1424–1796px
 - [x] Mobile hero images — switched from square to landscape (1622×1240, 76.45% ratio) on all 4 game pages
 - [x] Point sennepgames.com domain at Netlify
+- [x] Polyverse Privacy Policy page — sennepgames.com/polyverse/privacy (cream bg, 800px reading column, pill button)
+- [x] Polyverse Terms of Use page — sennepgames.com/polyverse/terms (shares legal.css with Privacy)
+- [x] legal.css — scoped legal-page styles (cream bg, dark logo absolute, 800px column, pill button, fluid + mobile breakpoints)
+- [ ] Wire up footer Privacy/Terms links on Polyverse page (currently href="#")
 - [ ] Mailing list integration
 
 ## Responsive breakpoints
@@ -216,12 +239,13 @@ sennep-games/
 - alphaputt.css: Alphaputt page layout, desktop-first with mobile @media (max-width: 833px), shared .video-player component
 - olo-loco.css: OLO Loco page layout, same pattern as Alphaputt + reverso/other-games sections
 - olo-classic.css: OLO Classic page layout, same pattern + safari/other-games sections
+- legal.css: shared scaffolding for Polyverse Privacy and Terms pages (cream bg, 800px reading column, pill button)
 - All game page CSS files include .game-card-mini styles for "Also from Sennep Games" cross-promotion
 - Breakpoint reference comments in global.css :root block
 
 ## How to start a new session
 1. Open Terminal
-2. Run: cd ~/Documents/sennep-games
+2. Run: cd ~/Projects/sennep-games
 3. Run: claude
 4. Tell Claude: "Please read CLAUDE.md and let's continue"
 5. Share your Figma file link when asked
@@ -232,16 +256,16 @@ sennep-games/
 Static site hosted on Netlify, auto-deploying from the main branch on GitHub (SennepLDN/sennep-games). Every push to main goes live automatically. Custom domain sennepgames.com is live with DNS pointed at Netlify.
 
 **Codebase**
-Plain HTML/CSS/JS — no frameworks, no build tools, no dependencies. Five pages: homepage, Polyverse, Alphaputt, OLO Loco, OLO Classic. CSS split across a shared global.css for design tokens and per-page stylesheets. One JS file (polyverse.js). All assets — images, videos, fonts — served statically.
+Plain HTML/CSS/JS — no frameworks, no build tools, no dependencies. Seven pages: homepage, Polyverse, Alphaputt, OLO Loco, OLO Classic, plus Polyverse Privacy and Terms. CSS split across a shared global.css for design tokens and per-page stylesheets (including a shared legal.css for Privacy/Terms). One JS file (polyverse.js). All assets — images, videos, fonts — served statically.
 
 **Design system**
 Figma is the design source of truth. Fonts are Paytone One and Manrope via Google Fonts. CSS variables in global.css match Figma tokens. Responsive across five breakpoints from 375px mobile up to 2500px+ widescreen, using CSS clamp() for fluid scaling.
 
 **Analytics**
-Cloudflare Web Analytics — free, cookieless, privacy-first. JS snippet added manually to all five pages. No cookie consent banner required.
+Cloudflare Web Analytics — free, cookieless, privacy-first. JS snippet added manually to every page (homepage, four game pages, Privacy, Terms). No cookie consent banner required.
 
 **Version control**
 GitHub repo at SennepLDN/sennep-games. Connected to Netlify for auto-deploy.
 
 **Still to set up**
-Favicon, Open Graph images, footer, privacy page, mailing list (likely Mailchimp), homepage hero fluid scaling (834px–1439px), Polyverse animation and scroll behaviour.
+Favicon, mailing list (likely Mailchimp), homepage hero fluid scaling (834px–1439px), wiring up the footer Privacy/Terms links on the Polyverse page.

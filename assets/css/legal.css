@@ -1,0 +1,214 @@
+/* ============================================================
+   Sennep Games — Legal pages (Privacy, Terms)
+   Cream-background reading layout for Polyverse legal pages.
+   ============================================================ */
+
+.legal {
+  background-color: #EFE4DF; /* sen_gam_light_cream */
+  min-height: 100vh;
+  position: relative;
+  color: #0B1D28;
+}
+
+/* --- Logo (top-left, scrolls with page) --- */
+.legal__logo {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  display: block;
+  width: 84px;
+  height: 73px;
+  z-index: 10;
+}
+
+.legal__logo img {
+  width: 100%;
+  height: 100%;
+}
+
+/* --- Page wrapper --- */
+.legal__main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 200px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* --- Header --- */
+.legal__header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  text-align: left;
+  color: #0B1D28;
+}
+
+.legal__title {
+  font-family: var(--font-heading);
+  font-size: 100px;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.legal__meta {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 40px;
+  text-transform: uppercase;
+}
+
+.legal__intro {
+  font-family: var(--font-body);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 40px;
+  text-align: left;
+  width: 100%;
+}
+
+/* --- Section --- */
+.legal__section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.legal__section-heading {
+  font-family: var(--font-heading);
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 60px;
+  text-transform: uppercase;
+  color: #0B1D28;
+}
+
+.legal__section-body {
+  font-family: var(--font-body);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 40px;
+  color: #274D65; /* sen_gam_mid_blue */
+}
+
+.legal__section-body p + p {
+  margin-top: 1em;
+}
+
+.legal__section-body ul {
+  list-style: disc;
+  padding-left: 33px;
+  margin: 0;
+}
+
+.legal__section-body ul + p,
+.legal__section-body p + ul {
+  margin-top: 1em;
+}
+
+.legal__section-body a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* --- Pill button --- */
+.legal__button {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  padding: 30px 40px;
+  background-color: var(--color-heading); /* light blue #B6D9E1 */
+  color: #0B1D28;
+  border-radius: 30px;
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 40px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 200ms ease;
+}
+
+.legal__button:hover {
+  background-color: #274D65; /* mid blue, matches signup button hover */
+  color: #EFE4DF;
+}
+
+
+/* ============================================================
+   Tablet / fluid (834px–1439px)
+   ============================================================ */
+@media (max-width: 1439px) and (min-width: 834px) {
+
+  .legal__main {
+    padding: clamp(120px, 13.9vw, 200px) clamp(40px, 4.17vw, 60px);
+    gap: clamp(40px, 4.17vw, 60px);
+  }
+
+  .legal__title {
+    font-size: clamp(70px, 6.94vw, 100px);
+  }
+
+  .legal__section-heading {
+    font-size: clamp(36px, 3.47vw, 50px);
+    line-height: clamp(44px, 4.17vw, 60px);
+  }
+
+}
+
+
+/* ============================================================
+   Mobile (max-width: 833px)
+   ============================================================ */
+@media (max-width: 833px) {
+
+  .legal__logo {
+    top: 20px;
+    left: 20px;
+    width: 48px;
+    height: 42px;
+  }
+
+  .legal__main {
+    padding: 100px 26px 80px;
+    gap: 40px;
+  }
+
+  .legal__title {
+    font-size: 50px;
+  }
+
+  .legal__meta {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .legal__intro,
+  .legal__section-body {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .legal__section {
+    gap: 20px;
+  }
+
+  .legal__section-heading {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .legal__button {
+    padding: 20px 30px;
+    font-size: 18px;
+    line-height: 28px;
+    border-radius: 26px;
+  }
+
+}
