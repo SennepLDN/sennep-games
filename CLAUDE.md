@@ -26,11 +26,17 @@ Sennep is an independent design/games studio based in London. Shipped titles inc
 │   └── terms/
 │       └── index.html      ← sennepgames.com/polyverse/terms
 ├── alphaputt/
-│   └── index.html          ← sennepgames.com/alphaputt
+│   ├── index.html          ← sennepgames.com/alphaputt
+│   └── privacy/
+│       └── index.html      ← sennepgames.com/alphaputt/privacy
 ├── olo-loco/
-│   └── index.html          ← sennepgames.com/olo-loco
+│   ├── index.html          ← sennepgames.com/olo-loco
+│   └── privacy/
+│       └── index.html      ← sennepgames.com/olo-loco/privacy
 ├── olo-classic/
-│   └── index.html          ← sennepgames.com/olo-classic
+│   ├── index.html          ← sennepgames.com/olo-classic
+│   └── privacy/
+│       └── index.html      ← sennepgames.com/olo-classic/privacy
 ├── assets/
 │   ├── css/
 │   │   ├── global.css      ← shared styles, fonts, CSS variables
@@ -96,6 +102,12 @@ Sennep is an independent design/games studio based in London. Shipped titles inc
 - A-Z section: single wide image on desktop, two stacked squares on mobile
 - "Also from" section links to Polyverse, OLO Loco, OLO Classic
 
+### /alphaputt/privacy (sennepgames.com/alphaputt/privacy)
+- Status: BUILT — desktop + tablet + mobile
+- Same scaffolding as the Polyverse Privacy page; uses shared legal.css
+- Sections: What we collect / How we use it / Third-party services / How long we keep data / Your choices / Children / Contact / Updates (no ATT section — Alphaputt does not show an ATT prompt)
+- Pill button links back to the Alphaputt page
+
 ### /olo-loco (sennepgames.com/olo-loco)
 - Status: BUILT — desktop + mobile + fluid scaling done
 - Figma sections (in order): Hero unit, Main title, Video section (promo), Quote, 3 features, Video section 2 (devices autoplay), Reverso Mode (autoplay), Also from Sennep Games
@@ -104,6 +116,13 @@ Sennep is an independent design/games studio based in London. Shipped titles inc
 - Devices + Reverso videos: autoplay, loop, muted
 - "Also from" section links to Polyverse, Alphaputt, OLO Classic
 
+### /olo-loco/privacy (sennepgames.com/olo-loco/privacy)
+- Status: BUILT — desktop + tablet + mobile
+- Same scaffolding as the Polyverse Privacy page; uses shared legal.css
+- Mentions online multiplayer data + display name visible to other players; lists Apple Game Center / Google Play Games Services as platform services
+- Sections: What we collect / How we use it / Third-party services / How long we keep data / Your choices / Children / Contact / Updates (no ATT section)
+- Pill button links back to the OLO LOCO page
+
 ### /olo-classic (sennepgames.com/olo-classic)
 - Status: BUILT — desktop + mobile + fluid scaling done
 - Figma sections (in order): Hero unit, Main title, Video section (promo), Quote, 2 features, Safari Theme (autoplay), Also from Sennep Games
@@ -111,6 +130,13 @@ Sennep is an independent design/games studio based in London. Shipped titles inc
 - Promo video: play/stop/reset (olo_game_sm.mp4)
 - Safari video: autoplay, loop, muted (olo_safari_sm.mp4)
 - "Also from" section links to Polyverse, Alphaputt, OLO Loco
+
+### /olo-classic/privacy (sennepgames.com/olo-classic/privacy)
+- Status: BUILT — desktop + tablet + mobile
+- Same scaffolding as the Polyverse Privacy page; uses shared legal.css
+- Visible name is "OLO Classic" in heading, meta and body copy (App Store name is "OLO"); URL stays /olo-classic/privacy
+- Sections: What we collect / How we use it / Third-party services / How long we keep data / Your choices / Children / Contact / Updates (no ATT section)
+- Pill button links back to the OLO Classic page
 
 ### / (homepage)
 - Status: IN PROGRESS — desktop + mobile + game card fluid scaling done, hero fluid scaling still to do
@@ -222,7 +248,11 @@ Sennep is an independent design/games studio based in London. Shipped titles inc
 - [x] Polyverse Privacy Policy page — sennepgames.com/polyverse/privacy (cream bg, 800px reading column, pill button)
 - [x] Polyverse Terms of Use page — sennepgames.com/polyverse/terms (shares legal.css with Privacy)
 - [x] legal.css — scoped legal-page styles (cream bg, dark logo absolute, 800px column, pill button, fluid + mobile breakpoints)
-- [ ] Wire up footer Privacy/Terms links on Polyverse page (currently href="#")
+- [x] Alphaputt privacy page — sennepgames.com/alphaputt/privacy (shares legal.css)
+- [x] OLO Classic privacy page — sennepgames.com/olo-classic/privacy (shares legal.css)
+- [x] OLO LOCO privacy page — sennepgames.com/olo-loco/privacy (shares legal.css)
+- [x] Footer Privacy links wired up on all game pages; Polyverse footer also gains Terms link; Privacy link removed from homepage footer
+- [ ] Terms of Use pages for Alphaputt, OLO Classic, OLO LOCO (later — copy polyverse/terms/index.html, share legal.css, pill button back to the game; then wire each game footer's Terms link)
 - [ ] Mailing list integration
 
 ## Responsive breakpoints
@@ -239,7 +269,7 @@ Sennep is an independent design/games studio based in London. Shipped titles inc
 - alphaputt.css: Alphaputt page layout, desktop-first with mobile @media (max-width: 833px), shared .video-player component
 - olo-loco.css: OLO Loco page layout, same pattern as Alphaputt + reverso/other-games sections
 - olo-classic.css: OLO Classic page layout, same pattern + safari/other-games sections
-- legal.css: shared scaffolding for Polyverse Privacy and Terms pages (cream bg, 800px reading column, pill button)
+- legal.css: shared scaffolding for all Privacy and Terms pages (cream bg, 800px reading column, pill button)
 - All game page CSS files include .game-card-mini styles for "Also from Sennep Games" cross-promotion
 - Breakpoint reference comments in global.css :root block
 
@@ -256,16 +286,16 @@ Sennep is an independent design/games studio based in London. Shipped titles inc
 Static site hosted on Netlify, auto-deploying from the main branch on GitHub (SennepLDN/sennep-games). Every push to main goes live automatically. Custom domain sennepgames.com is live with DNS pointed at Netlify.
 
 **Codebase**
-Plain HTML/CSS/JS — no frameworks, no build tools, no dependencies. Seven pages: homepage, Polyverse, Alphaputt, OLO Loco, OLO Classic, plus Polyverse Privacy and Terms. CSS split across a shared global.css for design tokens and per-page stylesheets (including a shared legal.css for Privacy/Terms). One JS file (polyverse.js). All assets — images, videos, fonts — served statically.
+Plain HTML/CSS/JS — no frameworks, no build tools, no dependencies. Ten pages: homepage, Polyverse, Alphaputt, OLO Loco, OLO Classic, plus Polyverse Privacy + Terms and per-game Privacy pages for Alphaputt, OLO Classic and OLO LOCO. CSS split across a shared global.css for design tokens and per-page stylesheets (including a shared legal.css for all Privacy/Terms pages). One JS file (polyverse.js). All assets — images, videos, fonts — served statically.
 
 **Design system**
 Figma is the design source of truth. Fonts are Paytone One and Manrope via Google Fonts. CSS variables in global.css match Figma tokens. Responsive across five breakpoints from 375px mobile up to 2500px+ widescreen, using CSS clamp() for fluid scaling.
 
 **Analytics**
-Cloudflare Web Analytics — free, cookieless, privacy-first. JS snippet added manually to every page (homepage, four game pages, Privacy, Terms). No cookie consent banner required.
+Cloudflare Web Analytics — free, cookieless, privacy-first. JS snippet added manually to every page (homepage, four game pages, and all Privacy/Terms pages). No cookie consent banner required.
 
 **Version control**
 GitHub repo at SennepLDN/sennep-games. Connected to Netlify for auto-deploy.
 
 **Still to set up**
-Favicon, mailing list (likely Mailchimp), homepage hero fluid scaling (834px–1439px), wiring up the footer Privacy/Terms links on the Polyverse page.
+Favicon, mailing list (likely Mailchimp), homepage hero fluid scaling (834px–1439px), and Terms of Use pages for Alphaputt, OLO Classic and OLO LOCO (copy polyverse/terms/index.html, reuse legal.css, then wire each game footer's Terms link).
