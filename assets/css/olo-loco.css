@@ -113,7 +113,7 @@
    ============================================================ */
 .title-section {
     background-color: var(--color-bg);
-    padding: clamp(70px, 8.33vw, 120px) clamp(6px, 0.69vw, 10px);
+    padding: clamp(70px, 8.33vw, 120px) clamp(6px, 0.69vw, 10px) 0;
 }
 
 .title-section__inner {
@@ -506,7 +506,7 @@
 
     /* --- Title section --- */
     .title-section {
-        padding: 30px 26px;
+        padding: 30px 26px 0;
     }
 
     .title-section__inner {
