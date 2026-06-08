@@ -152,50 +152,6 @@
 
 
 /* ============================================================
-   App Links
-   ============================================================ */
-.app-links {
-    background-color: var(--color-bg);
-    padding: 40px 0;
-    display: flex;
-    justify-content: center;
-}
-
-.app-links__buttons {
-    display: flex;
-    gap: 20px;
-}
-
-.app-links__buttons a {
-    display: block;
-    width: 100px;
-    height: 100px;
-    line-height: 0;
-    position: relative;
-}
-
-.app-links__buttons img {
-    width: 100%;
-    height: 100%;
-}
-
-/* Hover state — preloaded via hidden img, shown on hover */
-.app-links__buttons a .app-link-hover {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-}
-
-.app-links__buttons a:hover .app-link-hover {
-    opacity: 1;
-}
-
-.app-links__buttons a:hover .app-link-default {
-    opacity: 0;
-}
-
-
-/* ============================================================
    Video section — poster image with play button overlay
    ============================================================ */
 .video-section {
@@ -583,21 +539,6 @@
     .title-section__tagline {
         font-size: 14px;
         line-height: 24px;
-    }
-
-
-    /* --- App links --- */
-    .app-links {
-        padding: 20px 0;
-    }
-
-    .app-links__buttons {
-        gap: 10px;
-    }
-
-    .app-links__buttons a {
-        width: 50px;
-        height: 50px;
     }
 
 

@@ -49,7 +49,7 @@ Sennep is an independent design/games studio based in London. Shipped titles inc
 │   ├── js/
 │   │   └── polyverse.js
 │   ├── images/
-│   │   ├── shared/         ← Shared assets (logo.svg, logo-dark.svg)
+│   │   ├── shared/         ← Shared assets (logos + iOS_link.svg / iOS_link_hover.svg App Store button)
 │   │   ├── polyverse/      ← Polyverse images
 │   │   ├── alphaputt/      ← Alphaputt images
 │   │   ├── olo_loco/       ← OLO Loco images
@@ -96,7 +96,7 @@ Sennep is an independent design/games studio based in London. Shipped titles inc
 - Status: BUILT — desktop + mobile + fluid scaling done
 - Figma sections (in order): Hero unit, Main title, App Links, Video section, Quote, 3 features, A-Z image, Escape scene, Also from Sennep Games
 - Dark logo (logo-dark.svg), links back to homepage
-- App Links: iOS App Store + Viverse buttons (100px desktop, 50px mobile), hover swaps to light blue circle variant
+- App Links: iOS App Store + Viverse buttons (100px desktop, 50px mobile), hover swaps to light blue circle variant — shared .app-links component (CSS in global.css, iOS SVGs in assets/images/shared/)
 - Video player: poster image with play button, tap to play/stop, resets on end
 - Two video sections: promo (ap_promo_sm.mp4) and escape (ap_escape.mp4)
 - A-Z section: single wide image on desktop, two stacked squares on mobile
@@ -110,8 +110,9 @@ Sennep is an independent design/games studio based in London. Shipped titles inc
 
 ### /olo-loco (sennepgames.com/olo-loco)
 - Status: BUILT — desktop + mobile + fluid scaling done
-- Figma sections (in order): Hero unit, Main title, Video section (promo), Quote, 3 features, Video section 2 (devices autoplay), Reverso Mode (autoplay), Also from Sennep Games
+- Figma sections (in order): Hero unit, Main title, App Links, Video section (promo), Quote, 3 features, Video section 2 (devices autoplay), Reverso Mode (autoplay), Also from Sennep Games
 - Dark logo (logo-dark.svg), links back to homepage
+- App Links: Apple App Store button — country-neutral URL https://apps.apple.com/app/olo-loco/id1473639845 (shared .app-links component)
 - Promo video: play/stop/reset (OLO_LOCO_1920x1080.mp4)
 - Devices + Reverso videos: autoplay, loop, muted
 - "Also from" section links to Polyverse, Alphaputt, OLO Classic
@@ -125,8 +126,9 @@ Sennep is an independent design/games studio based in London. Shipped titles inc
 
 ### /olo-classic (sennepgames.com/olo-classic)
 - Status: BUILT — desktop + mobile + fluid scaling done
-- Figma sections (in order): Hero unit, Main title, Video section (promo), Quote, 2 features, Safari Theme (autoplay), Also from Sennep Games
+- Figma sections (in order): Hero unit, Main title, App Links, Video section (promo), Quote, 2 features, Safari Theme (autoplay), Also from Sennep Games
 - Dark logo (logo-dark.svg), links back to homepage
+- App Links: Apple App Store button — country-neutral URL https://apps.apple.com/app/olo-game/id529826126 (shared .app-links component)
 - Promo video: play/stop/reset (olo_game_sm.mp4)
 - Safari video: autoplay, loop, muted (olo_safari_sm.mp4)
 - "Also from" section links to Polyverse, Alphaputt, OLO Loco
@@ -252,6 +254,9 @@ Sennep is an independent design/games studio based in London. Shipped titles inc
 - [x] OLO Classic privacy page — sennepgames.com/olo-classic/privacy (shares legal.css)
 - [x] OLO LOCO privacy page — sennepgames.com/olo-loco/privacy (shares legal.css)
 - [x] Footer Privacy links wired up on all game pages; Polyverse footer also gains Terms link; Privacy link removed from homepage footer
+- [x] OLO Classic page — App Store button added (country-neutral link, https://apps.apple.com/app/olo-game/id529826126)
+- [x] OLO LOCO page — App Store button added (country-neutral link, https://apps.apple.com/app/olo-loco/id1473639845)
+- [x] App Store button SVGs + CSS moved to shared (assets/images/shared/ + global.css), reused across Alphaputt / OLO Classic / OLO Loco
 - [ ] Terms of Use pages for Alphaputt, OLO Classic, OLO LOCO (later — copy polyverse/terms/index.html, share legal.css, pill button back to the game; then wire each game footer's Terms link)
 - [ ] Mailing list integration
 
@@ -263,7 +268,7 @@ Sennep is an independent design/games studio based in London. Shipped titles inc
 - X-Wide:   2500px+          — hero background-size: cover, scales with browser
 
 ## CSS architecture
-- global.css: design tokens (colours, fonts, spacing variables using clamp() for fluid scaling)
+- global.css: design tokens (colours, fonts, spacing variables using clamp() for fluid scaling) + shared components (footer, .app-links Apple App Store button row)
 - polyverse.css: page layout, desktop-first with mobile @media (max-width: 833px) at bottom
 - homepage.css: homepage layout, desktop-first with tablet @media (834–1439px) and mobile @media (max-width: 833px)
 - alphaputt.css: Alphaputt page layout, desktop-first with mobile @media (max-width: 833px), shared .video-player component
